@@ -1,0 +1,8 @@
+{
+  "name": "vixetext-template",
+  "image": "reinanhs/limarka-help:1.0.0",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {}
+  }
+}
