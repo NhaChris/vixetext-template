@@ -2,22 +2,22 @@
 #===============================================#
 # Informações principais
 #===============================================#
-instituicao: Universidade/Faculdade do Brasil
-author: Nome do autor
-title: 'Título do trabalho'
-local: Cidade - UF
-date: '2024'
-titulacao: Minha-titulação
-curso: Meu-curso
-programa: Programa de Pós-Graduação em XXXX
+instituicao: Instituto Federal de Educação, Ciência e Tecnologia de Sergipe
+author: Christyan Marcos SIlva dos Santos
+title: 'CodeMage: uma plataforma gamificada para o ensino de lógica de programação utilizando a linguagem Lua'
+local: Nossa Senhora do Socorro - SE
+date: '2026'
+titulacao: Bacharelado
+curso: Análise e Desenvolvimento de Sistemas
+programa: ''
 area_de_concentracao: Computação
 linha_de_pesquisa: ''
-coorientador: 'Prof. Nome Do Coorientador'
-orientador: 'Prof. Dr. Nome Do Orientador'
-aprovacao_dia: '04'
-aprovacao_mes: 'outubro'
-avaliador1: 'Prof. Nome Do Convidado'
-avaliador2: 'Prof. Nome Do Convidado 2'
+coorientador: ''
+orientador: 'Prof. Francisco Rodrigues Santos'
+aprovacao_dia: ''
+aprovacao_mes: ''
+avaliador1: ''
+avaliador2: ''
 avaliador3: ''
 incluir_ficha_catalografica: true
 folha_de_aprovacao: true
@@ -31,7 +31,7 @@ agradecimentos: '@import(pages/agradecimentos.md)'
 resumen: ''
 resume: ''
 dedicatoria: ''
-epigrafe: 'O sucesso é ir de fracasso em fracasso sem perder o entusiasmo. (Winston Churchill)'
+epigrafe: 'Os limites da minha linguagem significam os limites do meu mundo. (Ludwig Wittgenstein)'
 capa_pdf_caminho: ''
 #===============================================#
 # Informações importantes
@@ -39,28 +39,30 @@ capa_pdf_caminho: ''
 siglas:
   - s: ABNT
     d: Associação Brasileira de Normas Técnicas
+  - s: ABP
+    d: Aprendizagem Baseada em Problemas
   - s: API
     d: Application Programming Interface
-  - s: BSI
-    d: Bacharelado em Sistemas de Informação
-  - s: CD
-    d: Continuous Deployment/Delivery
-  - s: CI
-    d: Continuous Integration
-  - s: CLI
-    d: Command Line Interface
-  - s: CSS
-    d: Cascading Style Sheets
-  - s: VS Code
-    d: Visual Studio Code
+  - s: BNF
+    d: Backus-Naur Form
+  - s: EBNF
+    d: Extended Backus-Naur Form
+  - s: JIT
+    d: Just-In-Time (compilation)
+  - s: RPG
+    d: Role-Playing Game
+  - s: RNG
+    d: Random Number Generator
+  - s: HP
+    d: Health Points (pontos de vida)
 simbolos:
 graduacao: true
 especializacao: false
 mestrado: false
 doutorado: false
-tipo_do_trabalho: Monografia
+tipo_do_trabalho: Projeto de pesquisa
 projeto: true
-apendices: false
+apendices: true
 anexos: false
 errata: false
 referencias_sistema: alf
@@ -68,8 +70,8 @@ lista_ilustracoes: true
 lista_quadros: false
 lista_tabelas: false
 referencias_caminho: config/referencias.bib
-palavras_chave: 'Limarka; Markdown; Automação; Marp; Ferramenta; Aprimoramento; Produtividade'
-keywords: 'Limarka; Markdown; Automation; Marp; Tool; Improvement; Productivity'
+palavras_chave: 'Lógica de programação; Pensamento computacional; Gamificação; Ensino de programação; Aprendizagem baseada em problemas; Linguagem Lua'
+keywords: 'Programming logic; Computational thinking; Gamification; Programming education; Problem-based learning; Lua language'
 palabras_clave: ''
 mots_cles: ''
 #===============================================#
