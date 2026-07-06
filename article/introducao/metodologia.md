@@ -24,6 +24,9 @@ f. Validação técnica: verificação de que apenas código executável é inco
 
 ### Ferramentas e tecnologias
 
-O artefato será desenvolvido na linguagem Lua, executada sobre o framework **LÖVE** (versão 11.5), que embarca o interpretador **LuaJIT** (compatível com a especificação Lua 5.1). 
+O artefato será desenvolvido na linguagem **Lua**, executada sobre o framework **LÖVE** (versão 11.5), que embarca o interpretador **LuaJIT** (compatível com a especificação Lua 5.1).
+
+Cabe destacar que a linguagem é o **meio**, não o fim: o objeto de ensino é o raciocínio algorítmico, e Lua atua como o veículo pelo qual esse raciocínio é escrito e executado. Ela foi adotada por características que reduzem o atrito para o iniciante — sintaxe enxuta, poucas palavras reservadas, semântica acessível e ampla utilização como linguagem de extensão (*scripting*) em motores de jogos \cite{ierusalimschy1996lua}. É esse mesmo interpretador embarcado pelo LÖVE que o CodeMage restringe a um ambiente seguro (*sandbox*), de modo que o código arbitrário do jogador possa ser executado sem comprometer a estabilidade ou a segurança do sistema.
+
 
 A plataforma-alvo é o ambiente *desktop*, com possibilidade de empacotamento do jogo como executável independente. A resolução, o título e os demais parâmetros de inicialização são centralizados em um único módulo de configuração, e os recursos visuais (*sprites*) são gerados proceduralmente, dispensando dependências de arquivos externos obrigatórios.

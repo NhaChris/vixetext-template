@@ -14,8 +14,9 @@
 
 @import('article/fundamentacao/trabalhos-relacionados.md')
 
-<!-- Capítulo 4: Melhorias -->
-# Exemplo
+<!-- Capítulo 4: Desenvolvimento -->
+# O protótipo CodeMage
+\label{cap_prototipo}
 
 @import('article/desenvolvimento/main.md')
 

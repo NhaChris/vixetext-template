@@ -1,4 +1,4 @@
-A aprendizagem da lógica de programação é reconhecidamente uma das maiores barreiras nos cursos da área de computação, conforme destacam \cite{autor1, autor2, autor3}. Mais do que decorar a sintaxe de uma linguagem específica, o iniciante precisa desenvolver o raciocínio algorítmico, isto é, a capacidade de decompor um problema, ordenar passos, tomar decisões condicionais, repetir ações de forma controlada e generalizar uma solução para casos diferentes. 
+A aprendizagem da lógica de programação é reconhecidamente uma das maiores barreiras nos cursos da área de computação \cite{jenkins2002difficulty, gomes2007learning, bosse2015reprovacoes}. Mais do que decorar a sintaxe de uma linguagem específica, o iniciante precisa desenvolver o raciocínio algorítmico, isto é, a capacidade de decompor um problema, ordenar passos, tomar decisões condicionais, repetir ações de forma controlada e generalizar uma solução para casos diferentes. 
 
 Essas habilidades são intrinsecamente abstratas, e o estudante frequentemente não consegue relacionar o raciocínio que constrói a um efeito concreto e imediato. Esse distanciamento entre causa (a lógica expressa em código) e efeito (o resultado observado) contribui para as elevadas taxas de evasão observadas nos cursos de Computação, que em diversos países variam entre 30\% e 50\% \cite{hoed2017evasao}. 
 
@@ -8,14 +8,7 @@ Diante desse cenário, a gamificação, através do uso de elementos de jogos em
 
 Este trabalho parte de uma premissa distinta: a de que construir a lógica de uma solução pode ser, ela própria, a mecânica central de um jogo.
 
-Desta forma, propõe o desenvolvimento do CodeMage, um jogo eletrônico de combate por turnos no qual o jogador não seleciona habilidades prontas, mas as programa como "magias" de um personagem. 
-
-> ===== Acredito que aqui já não faça mais parte da contextualização e sim da execução do trabalho
-
-> Cada "magia", do CodMage, é um pequeno algoritmo, escrito em um editor embutido que é validado e executado para produzir efeitos no combate. E a progressão no jogo depende diretamente da capacidade do jogador de raciocinar sobre o problema, compreender por que sua solução falhou, depurá-la e generalizá-la, transformando o ciclo de desenvolvimento do pensamento lógico na própria mecânica de avanço.
-
-
-> Para que essa lógica seja expressa, é preciso uma linguagem concreta, e a escolhida foi a **Lua**. Cabe destacar que a linguagem é o **meio**, não o fim: o objeto de ensino é o raciocínio algorítmico, e Lua atua como o veículo pelo qual esse raciocínio é escrito e executado. Ela foi adotada por características que reduzem o atrito para o iniciante — sintaxe enxuta, poucas palavras reservadas, semântica acessível e ampla utilização como linguagem de extensão (*scripting*) em motores de jogos \cite{ierusalimschy1996lua}. O CodeMage é construído sobre o framework LÖVE, que embarca um interpretador Lua, e restringe esse interpretador a um ambiente seguro (*sandbox*), de modo que o código arbitrário do jogador possa ser executado sem comprometer a estabilidade ou a segurança do sistema.
+Desta forma, propõe-se o desenvolvimento do CodeMage, um jogo eletrônico de combate por turnos no qual o jogador não seleciona habilidades prontas, mas as programa como "magias" de um personagem, escritas em um subconjunto da linguagem Lua em um editor embutido no próprio jogo. Cada magia é um pequeno algoritmo, e a progressão depende diretamente da capacidade do jogador de raciocinar sobre o problema, compreender por que sua solução falhou, depurá-la e generalizá-la — transformando o exercício do pensamento lógico na própria mecânica de avanço.
 
 ## Problema de pesquisa
 
