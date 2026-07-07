@@ -2,7 +2,13 @@
 
 Este apêndice apresenta a especificação formal, em notação BNF/EBNF, do subconjunto da linguagem Lua aceito pelo editor de magias do CodeMage, somada à interface de programação de domínio (`magia.*`) exposta pela *sandbox*.
 
-O CodeMage não define uma linguagem nova: reaproveita o interpretador Lua 5.1 (LuaJIT) embarcado no framework LÖVE e o restringe a um ambiente fechado. A linguagem efetivamente aceita tem, portanto, duas camadas. A primeira é sintática: quais construções o texto do jogador pode conter — qualquer programa Lua válido compila, mas só um subconjunto é útil, porque a tabela de globais é reduzida. A segunda é semântica: quais nomes existem no ambiente. Tudo o que não estiver no ambiente montado pela *sandbox* resolve para `nil`, e o uso de um nome inexistente como função gera erro de execução, rejeitado na validação do grimório. A gramática a seguir formaliza a linguagem pretendida — o subconjunto idiomático que o jogo ensina —, e não toda a sintaxe de Lua; a contribuição do trabalho está justamente na restrição, não na linguagem hospedeira.
+O CodeMage não define uma linguagem nova, ele reaproveita o interpretador Lua 5.1 (LuaJIT \gls{LUAJIT}), embarcado no framework LÖVE e o restringe a um ambiente fechado. Desta forma, a linguagem efetivamente aceita tem duas camadas: a sintática e semântica. 
+
+A parte sintática tem por objetivo definir quais construções o texto do jogador pode conter. Desta forma, qualquer programa Lua válido será compilado, por ser executada no \gls{LUAJIT}, mas só um subconjunto é útil, visto que a tabela de globais é reduzida. 
+
+Já a segunda, a semântica, define quais nomes existem no ambiente. Assim, tudo o que não estiver no ambiente montado pela *sandbox* será resolvido para `nil`, e o uso de um nome inexistente como função provocará erro de execução, ou seja, é rejeitado na validação do grimório (o que é isso? cabe uma nota de rodape?). 
+
+A gramática a seguir formaliza a linguagem pretendida, isto é, o subconjunto idiomático que o jogo ensina, e não toda a sintaxe de Lua; a contribuição do trabalho está justamente na restrição, não na linguagem hospedeira.
 
 ## Convenções de notação
 
@@ -18,7 +24,7 @@ O CodeMage não define uma linguagem nova: reaproveita o interpretador Lua 5.1 (
 
 ## Estrutura de um feitiço
 
-O texto completo escrito pelo jogador é um bloco: não há declaração de função na linguagem pretendida, e o corpo da magia é o próprio *chunk* de topo, compilado de uma só vez pela *sandbox*.
+Um feitiço é o comando completo escrito pelo jogador é um bloco. Nele não há declaração de função na linguagem pretendida e o corpo da magia é o próprio *chunk* de topo, compilado de uma só vez pela *sandbox*.
 
 ```
 <magia>        ::= <bloco>
@@ -38,6 +44,8 @@ O texto completo escrito pelo jogador é um bloco: não há declaração de fun�
 
 ## Declarações e atribuições
 
+Detalhar melhor o que são as declarações e atribuições dentro do seu ambiente.
+
 ```
 <decl-local>   ::= "local" <lista-nomes> [ "=" <lista-expr> ]
 
@@ -51,6 +59,7 @@ O texto completo escrito pelo jogador é um bloco: não há declaração de fun�
                  | <prefixo> "[" <expr> "]"
                  | <prefixo> "." <Nome>
 ```
+Seria interessante apresentar o "A API de domínio" antes dessa definição, pois é lá que as entidades são documentadas.
 
 Há uma restrição semântica relevante: as entidades obtidas por `magia.alvo()` e `magia.eu()` são expostas como *proxies*, e o campo `vida` é bloqueado tanto para escrita quanto para leitura — `entidade.vida = x` e a simples consulta a `entidade.vida` lançam erro. A vida só é alterada pelas funções de efeito da API (`magia.dano`, `magia.curar`, `magia.absorver`).
 
