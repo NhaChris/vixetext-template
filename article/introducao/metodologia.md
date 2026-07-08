@@ -1,8 +1,8 @@
 ## Metodologia
 \label{metodologia}
 
-Este trabalho classifica-se, quanto à natureza, como 
-aplicada, pois visa à produção de um artefato de software — o jogo CodeMage — destinado à solução de um problema concreto: o apoio ao ensino de lógica de programação.
+Este trabalho classifica-se, quanto à natureza, como
+aplicada, pois visa à produção de um artefato de software, denominado de CodeMage, destinado à solução de um problema concreto: o apoio ao ensino de lógica de programação.
 
 Quanto aos objetivos, caracteriza-se como exploratória e descritiva, na medida em que investiga a viabilidade de uma abordagem (programação como mecânica de jogo) e descreve detalhadamente as decisões de projeto e implementação adotadas. Já à abordagem, é predominantemente qualitativa, centrada na análise das escolhas arquiteturais e de suas implicações pedagógicas e técnicas.
 
