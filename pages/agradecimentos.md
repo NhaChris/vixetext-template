@@ -1,3 +1,3 @@
 # Agradecimentos
 
-<!-- TODO(autor): escrever os agradecimentos (issue #2). -->
+<!-- TODO(autor): escrever os agradecimentos, issue 2 -->

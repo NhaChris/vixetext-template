@@ -2,26 +2,26 @@ A aprendizagem da lógica de programação é reconhecidamente uma das maiores b
 
 Essas habilidades são intrinsecamente abstratas, e o estudante frequentemente não consegue relacionar o raciocínio que constrói a um efeito concreto e imediato. Esse distanciamento entre causa (a lógica expressa em código) e efeito (o resultado observado) contribui para as elevadas taxas de evasão observadas nos cursos de Computação, que em diversos países variam entre 30\% e 50\% \cite{hoed2017evasao}. 
 
-Um estudo de caso conduzido na Universidade de Brasília, \citeonline{hoed2017evasao}, identificou as dificuldades em disciplinas ligadas a algoritmos e ao ensino de programação entre as causas institucionais de abandono, corroborando a percepção de que é difícil para o iniciante construir as representações mentais necessárias para abstrair um problema.
+Em estudo de caso conduzido na Universidade de Brasília, \citeonline{hoed2017evasao} identificaram as dificuldades em disciplinas ligadas a algoritmos e ao ensino de programação entre as causas institucionais de abandono, o que reforça a percepção de que é difícil para o iniciante construir as representações mentais necessárias para abstrair um problema.
 
-Diante desse cenário, a gamificação, através do uso de elementos de jogos em contextos não recreativos, tem sido investigada como estratégia para aumentar o engajamento e tornar o aprendizado mais significativo \cite{busarello2014gamificacao}. Contudo, muitas soluções gamificadas tratam o ato de programar como uma tarefa enfadonha que precisa ser "adoçada" por recompensas externas (pontos, medalhas e rankings) sem alterar a natureza da atividade. Essa abordagem, por vezes chamada de *chocolate-covered broccoli*, mantém o código como um meio para obter a recompensa, e não como o cerne da experiência.
+Diante desse cenário, a gamificação, através do uso de elementos de jogos em contextos não recreativos, tem sido investigada como estratégia para aumentar o engajamento e tornar o aprendizado mais significativo \cite{busarello2014gamificacao}. Contudo, muitas soluções gamificadas tratam o ato de programar como uma tarefa enfadonha que precisa ser "adoçada" por recompensas externas (pontos, medalhas e rankings) sem alterar a natureza da atividade. Essa abordagem, que \citeonline{bruckman1999educational} descreve com a imagem do *chocolate-covered broccoli*, mantém o código como um meio para obter a recompensa, e não como o cerne da experiência.
 
 Este trabalho parte de uma premissa distinta: a de que construir a lógica de uma solução pode ser, ela própria, a mecânica central de um jogo.
 
-Desta forma, propõe-se o desenvolvimento do CodeMage, um jogo eletrônico de combate por turnos no qual o jogador não seleciona habilidades prontas, mas as programa como "magias" de um personagem, escritas em um subconjunto da linguagem Lua em um editor embutido no próprio jogo. Cada magia é um pequeno algoritmo, e a progressão depende diretamente da capacidade do jogador de raciocinar sobre o problema, compreender por que sua solução falhou, depurá-la e generalizá-la — transformando o exercício do pensamento lógico na própria mecânica de avanço.
+Desta forma, propõe-se o CodeMage, um jogo eletrônico de combate por turnos no qual o jogador não seleciona habilidades prontas, mas as programa como "magias" de um personagem, escritas em um subconjunto da linguagem Lua em um editor embutido no próprio jogo. Cada magia é um pequeno algoritmo, e a progressão depende diretamente da capacidade do jogador de raciocinar sobre o problema, compreender por que sua solução falhou, depurá-la e generalizá-la, o que faz do exercício do pensamento lógico a própria mecânica de avanço.
 
 ## Problema de pesquisa
 
 Considerando o exposto, este trabalho busca responder à seguinte questão: de que forma um jogo no qual a construção de algoritmos é a mecânica central, e não uma recompensa externa, pode apoiar o ensino de lógica de programação? 
 
-A investigação, proposta, envolve tanto o desenho de mecânicas de jogo que incentivem o raciocínio algorítmico e boas práticas de programação quanto os desafios técnicos de executar código de usuário de maneira segura, determinística e pedagogicamente proveitosa.
+A investigação proposta envolve tanto o desenho de mecânicas de jogo que incentivem o raciocínio algorítmico e boas práticas de programação quanto os desafios técnicos de executar código de usuário de maneira segura, determinística e pedagogicamente proveitosa.
 
 ## Justificativa
 
 A relevância deste trabalho reside em três aspectos: pedagógico, técnico e prático. 
 
-Do ponto de vista pedagógico, a proposta oferece um ambiente de feedback imediato no qual o erro deixa de ser uma penalidade e passa a ser parte natural do processo de descoberta, exercitando o raciocínio lógico de maneira independente da memorização de sintaxe — alinhando-se a abordagens como a Aprendizagem Baseada em Problemas (ABP). 
+Do ponto de vista pedagógico, a proposta oferece um ambiente de feedback imediato no qual o erro deixa de ser uma penalidade e passa a ser parte natural do processo de descoberta, e o raciocínio lógico é exercitado de maneira independente da memorização de sintaxe, em linha com abordagens como a Aprendizagem Baseada em Problemas (ABP).
 
-Do ponto de vista técnico, a execução isolada de código arbitrário em ambientes de programação e execução virtuais apresenta desafios não triviais como a contenção de laços infinitos sob compilação *Just-In-Time* (JIT) e execução além da prevenção de exaustão de memória.
+Do ponto de vista técnico, executar o código arbitrário do usuário dentro do próprio jogo apresenta desafios não triviais, como conter laços infinitos quando o interpretador usa compilação *Just-In-Time* (JIT) e impedir a exaustão de memória.
 
 Por fim, do ponto de vista prático, o CodeMage constitui um artefato concreto, distribuível e extensível, que pode ser empregado como recurso didático complementar em disciplinas introdutórias de programação.

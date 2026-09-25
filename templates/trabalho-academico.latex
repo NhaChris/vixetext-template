@@ -80,11 +80,11 @@
 % ---
 % Configurações do pacote backref
 % Usado sem a opção hyperpageref de backref
-\renewcommand{\backrefpagesname}{Citado na(s) página(s):~}
+\providecommand{\backrefpagesname}{Citado na(s) página(s):~}
 % Texto padrão antes do número das páginas
-\renewcommand{\backref}{}
+\providecommand{\backref}{}
 % Define os textos da citação
-\renewcommand*{\backrefalt}[4]{
+\providecommand*{\backrefalt}[4]{
 	\ifcase #1 %
 		Nenhuma citação no texto.%
 	\or
