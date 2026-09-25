@@ -62,7 +62,7 @@ mestrado: false
 doutorado: false
 tipo_do_trabalho: Projeto de pesquisa
 projeto: true
-apendices: true
+apendices: false
 anexos: false
 errata: false
 referencias_sistema: alf
