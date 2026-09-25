@@ -39,7 +39,7 @@ $if(folha_de_aprovacao)$
     \vspace*{\fill}
    \end{center}
 
-   $tipo_do_trabalho$ aprovada. \imprimirlocal, $aprovacao_dia$ de $aprovacao_mes$ de $date$:
+   Trabalho aprovado. \imprimirlocal, $aprovacao_dia$ de $aprovacao_mes$ de $date$:
 
    \assinatura{\textbf{\imprimirorientador} \\ Orientador}
 $if(coorientador)$
