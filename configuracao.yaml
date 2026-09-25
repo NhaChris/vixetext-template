@@ -3,11 +3,11 @@
 # Informações principais
 #===============================================#
 instituicao: Instituto Federal de Educação, Ciência e Tecnologia de Sergipe
-author: Christyan Marcos SIlva dos Santos
+author: Christyan Marcos Silva dos Santos
 title: 'CodeMage: uma plataforma gamificada para o ensino de lógica de programação utilizando a linguagem Lua'
-local: Nossa Senhora do Socorro - SE
+local: Aracaju - SE
 date: '2026'
-titulacao: Bacharelado
+titulacao: Tecnólogo
 curso: Análise e Desenvolvimento de Sistemas
 programa: ''
 area_de_concentracao: Computação
@@ -37,8 +37,6 @@ capa_pdf_caminho: ''
 # Informações importantes
 #===============================================#
 siglas:
-  - s: ABNT
-    d: Associação Brasileira de Normas Técnicas
   - s: ABP
     d: Aprendizagem Baseada em Problemas
   - s: API
@@ -49,12 +47,14 @@ siglas:
     d: Extended Backus-Naur Form
   - s: JIT
     d: Just-In-Time (compilation)
+  - s: MMO
+    d: Massively Multiplayer Online
   - s: RPG
     d: Role-Playing Game
   - s: RNG
     d: Random Number Generator
-  - s: HP
-    d: Health Points (pontos de vida)
+  - s: VM
+    d: Virtual Machine (máquina virtual)
 simbolos:
 graduacao: true
 especializacao: false
@@ -67,7 +67,7 @@ anexos: false
 errata: false
 referencias_sistema: alf
 lista_ilustracoes: true
-lista_quadros: false
+lista_quadros: true
 lista_tabelas: false
 referencias_caminho: config/referencias.bib
 palavras_chave: 'Lógica de programação; Pensamento computacional; Gamificação; Ensino de programação; Aprendizagem baseada em problemas; Linguagem Lua'

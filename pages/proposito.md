@@ -1,8 +1,7 @@
 # Propósito
 
-Trabalho de Conclusão de Curso apresentado ao
-Curso de Tecnólogo em Análise e Desenolvimento de Sistemas
-do Campus Aracaju do Instituto Federal de
-Educação, Ciência e Tecnologia, como requisito
-parcial à obtenção do grau de Tecnólogo em Análise e 
-Desenolvimento de Sistemas.
+Projeto de Trabalho de Conclusão de Curso apresentado ao
+Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas
+do Instituto Federal de Educação, Ciência e Tecnologia de Sergipe,
+Campus Aracaju, como requisito parcial para a obtenção do grau de
+Tecnólogo em Análise e Desenvolvimento de Sistemas.
