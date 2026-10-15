@@ -1,12 +1,16 @@
-Este capítulo apresenta a fundamentação teórica que sustenta a proposta deste trabalho, organizada em dois grupos. O primeiro reúne as bases pedagógicas: o pensamento computacional como objeto de ensino, a gamificação e a distinção entre seu uso genuíno e superficial, a Aprendizagem Baseada em Problemas como modelo que dá sentido à mecânica do jogo e o papel de uma linguagem de domínio restrita na redução da carga cognitiva do iniciante. O segundo reúne as bases técnicas sobre as quais o artefato foi construído: a linguagem Lua, o framework LÖVE, a especificação formal de linguagens e a execução isolada de código.
+Este capítulo apresenta a fundamentação teórica que sustenta a proposta deste trabalho, organizada em dois grupos: os fundamentos pedagógicos, que orientam o desenho do jogo, e os fundamentos técnicos, sobre os quais a plataforma foi construída.
 
-## Pensamento computacional e lógica de programação
+## Fundamentos pedagógicos
+
+Esta seção reúne as bases pedagógicas da proposta: o pensamento computacional como objeto de ensino, a gamificação e a distinção entre seu uso genuíno e superficial, a Aprendizagem Baseada em Problemas como modelo que dá sentido à mecânica do jogo e o papel de uma linguagem de domínio restrita na redução da carga cognitiva do iniciante.
+
+### Pensamento computacional e lógica de programação
 
 O objeto central de ensino deste trabalho não é uma linguagem de programação específica, mas o **raciocínio** que precede e fundamenta qualquer código. Esse raciocínio é frequentemente designado, na literatura, como *pensamento computacional*. Para \citeonline{wing2016pensamento}, o pensamento computacional consiste em um conjunto de atitudes e habilidades de resolução de problemas que se valem de conceitos fundamentais da Ciência da Computação, sendo aplicável por qualquer pessoa, e não apenas por cientistas da computação. Trata-se de uma forma de pensar que envolve decompor problemas em partes menores, reconhecer padrões, abstrair detalhes irrelevantes e formular soluções na forma de sequências de passos, o que corresponde à essência do que tradicionalmente se denomina lógica de programação.
 
 A relevância dessa distinção para o presente trabalho é direta: a dificuldade do iniciante raramente está em memorizar a sintaxe de uma linguagem, e sim em desenvolver a capacidade de **estruturar uma solução**. Como observado no capítulo introdutório, a literatura sobre evasão associa o abandono dos cursos de Computação justamente às disciplinas de algoritmos e lógica de programação \cite{hoed2017evasao}. Por essa razão, o CodeMage trata a linguagem Lua como um meio e elege o exercício do pensamento computacional, isto é, decompor, iterar, condicionar e generalizar, como o verdadeiro objeto de aprendizagem.
 
-## Gamificação na educação
+### Gamificação na educação
 
 A gamificação pode ser entendida como a aplicação de elementos e mecânicas de jogos em contextos que não são, originalmente, lúdicos, com o propósito de aumentar o engajamento e a motivação dos participantes \cite{busarello2014gamificacao}. \citeonline{deterding2011gamification} propõem uma definição mais estrita, que se tornou referência na área: o uso de elementos de design de jogos em contextos que não são de jogo. Os autores distinguem ainda a gamificação dos jogos sérios (*serious games*), que são jogos completos concebidos com finalidade que vai além do entretenimento. O CodeMage situa-se na fronteira entre as duas categorias, pois é um jogo completo, mas foi concebido como plataforma de apoio a uma disciplina, e é nesse sentido que o termo gamificação é empregado neste trabalho. No campo educacional, essa abordagem tem sido empregada na expectativa de tornar a aprendizagem mais ativa, oferecendo objetivos claros, desafios progressivos e retorno imediato sobre o desempenho.
 
@@ -14,13 +18,13 @@ Cabe, contudo, uma distinção fundamental para este trabalho. Em muitas aplica�
 
 A proposta do CodeMage filia-se a uma compreensão distinta, de **gamificação genuína**, na qual o conteúdo a ser aprendido é a própria mecânica do jogo. Aqui, programar não é a tarefa enfadonha que se busca recompensar: o ato de construir um algoritmo é, simultaneamente, a ação de jogar e a aprendizagem em si. Não há separação entre a atividade lúdica e o objeto de ensino, o que se pretende como um diferencial em relação às abordagens superficiais.
 
-## Aprendizagem Baseada em Problemas
+### Aprendizagem Baseada em Problemas
 
 A Aprendizagem Baseada em Problemas (ABP) é uma abordagem pedagógica, sistematizada inicialmente no ensino de medicina, na qual o aprendizado é desencadeado por um problema concreto, apresentado antes da exposição formal do conteúdo. Em vez de receber a teoria e depois aplicá-la, o estudante depara-se primeiro com um desafio, e é a necessidade de resolvê-lo que o conduz à construção do conhecimento. \citeonline{barrows1986taxonomy} observa que o termo não designa um método único, mas uma família de métodos, cujas variações dependem de como o problema é estruturado e do papel assumido pelo professor. O erro, nessa abordagem, deixa de ser uma falha a ser penalizada e passa a integrar naturalmente o processo de descoberta.
 
 Essa abordagem oferece o arcabouço pedagógico que dá sentido à estrutura do CodeMage. Cada adversário do jogo constitui um problema, a magia escrita pelo jogador é a solução proposta, e a imunidade do adversário a determinada estratégia é o que força a reformulação dessa solução. O jogador é levado a compreender **por que** seu código falhou e a ajustá-lo, em um ciclo que corresponde, essencialmente, ao processo de depuração e de aprendizagem por tentativa, reflexão e refinamento. A validação imediata do código, com retorno explícito sobre os erros cometidos, encurta esse ciclo e mantém o aprendiz em experimentação contínua.
 
-## Linguagens de domínio e redução da carga cognitiva
+### Linguagens de domínio e redução da carga cognitiva
 
 Um último eixo pedagógico diz respeito à decisão de **restringir** a linguagem oferecida ao jogador, em vez de expor toda a expressividade de uma linguagem de propósito geral. Linguagens de domínio específico (*domain-specific languages*, DSL) são linguagens ajustadas a um domínio de aplicação, que oferecem ganhos de expressividade e de facilidade de uso em relação às linguagens de propósito geral dentro desse domínio \cite{mernik2005dsl}. Entre os padrões de implementação descritos pelos autores está a incorporação (*embedding*), em que a DSL é construída sobre uma linguagem hospedeira já existente e aproveita o seu compilador ou interpretador. O CodeMage segue esse padrão. Ele não disponibiliza a linguagem Lua integralmente, mas um subconjunto delimitado, acrescido de uma interface de programação de domínio (a tabela `magia.*`) e executado dentro de um ambiente isolado (*sandbox*).
 
@@ -28,7 +32,11 @@ Essa restrição cumpre um papel pedagógico. \citeonline{sweller1988cognitive} 
 
 Dessa forma, a fronteira do que o jogador "pode escrever" coincide com a fronteira do que se pretende ensinar, e a própria delimitação da linguagem torna-se um instrumento de andaimento (*scaffolding*) no sentido proposto por \citeonline{wood1976tutoring}: um apoio que permite ao aprendiz resolver uma tarefa ou atingir um objetivo que estaria além de seus esforços sem assistência. A formalização desse subconjunto, por meio de uma gramática livre de contexto, é apresentada na \autoref{sec_gramatica}.
 
-## A linguagem Lua {#sec_lua}
+## Fundamentos técnicos
+
+Esta seção reúne as bases técnicas sobre as quais a plataforma foi construída: a linguagem Lua, o framework LÖVE, a especificação formal de linguagens e a execução isolada de código.
+
+### A linguagem Lua {#sec_lua}
 
 Lua é uma linguagem de programação criada em 1993 por Roberto Ierusalimschy, Luiz Henrique de Figueiredo e Waldemar Celes no Tecgraf, grupo de computação gráfica da Pontifícia Universidade Católica do Rio de Janeiro (PUC-Rio) \cite{ierusalimschy2007evolution}. Surgiu como linguagem de configuração e de descrição de dados para aplicações desenvolvidas pelo grupo e evoluiu para uma linguagem de extensão, pensada para ser embutida em programas escritos em C e controlada por eles \cite{ierusalimschy1996lua}. A distribuição oficial, o manual de referência e o código-fonte estão disponíveis gratuitamente no sítio da linguagem, em lua.org.
 
@@ -38,13 +46,13 @@ Cabe destacar que a linguagem é o **meio**, não o fim: o objeto de ensino é o
 
 Dois mecanismos da versão 5.1 são centrais para este trabalho. O primeiro são os ambientes. Toda função Lua tem associada uma tabela de ambiente, na qual são resolvidos os nomes globais que ela utiliza, e essa tabela pode ser substituída pela função `setfenv` \cite{lua51manual}. No LuaJIT, ela também pode ser informada no momento da compilação do trecho, como parâmetro da função `load`. Um trecho compilado com um ambiente próprio enxerga apenas os nomes que esse ambiente contém. O segundo mecanismo é a biblioteca de depuração, cuja função `debug.sethook` registra uma função que a máquina virtual chama a cada *n* instruções executadas \cite{lua51manual}. É com esses dois recursos que se constrói a *sandbox* discutida na \autoref{sec_sandbox_teoria}.
 
-## Frameworks de jogos em Lua e a escolha do LÖVE {#sec_love}
+### Frameworks de jogos em Lua e a escolha do LÖVE {#sec_love}
 
 A adoção de Lua em jogos deu origem a diversos frameworks e motores que usam a linguagem como meio de programação. Entre os que oferecem Lua como linguagem principal, destacam-se o Defold, motor mantido pela Defold Foundation que combina um editor visual com a programação da lógica do jogo em Lua \cite{defold}; o Solar2D, antigo Corona SDK, de código aberto e voltado sobretudo a aplicações móveis \cite{solar2d}; e o LÖVE, um framework livre para jogos 2D distribuído sob a licença zlib, que funciona em Windows, macOS, Linux, Android e iOS \cite{love2d}.
 
 O LÖVE foi escolhido por quatro motivos. Primeiro, é um framework, e não um motor com editor próprio: o jogo inteiro é escrito em código, o que dá controle total sobre o ciclo de execução, condição necessária para instalar e remover o *hook* de instruções em torno do código do jogador. Segundo, embarca o LuaJIT, de modo que o próprio interpretador que executa o jogo é o que executa as magias, sem a necessidade de um segundo interpretador. Terceiro, sua API é pequena e suficiente para um jogo 2D por turnos. Por fim, a licença permissiva e o empacotamento do jogo como arquivo `.love` ou como executável independente facilitam a distribuição do artefato em laboratórios de ensino.
 
-## Especificação formal de linguagens {#sec_especificacao}
+### Especificação formal de linguagens {#sec_especificacao}
 
 A sintaxe de uma linguagem de programação é descrita, em geral, por uma gramática livre de contexto, composta por símbolos terminais (os elementos léxicos da linguagem), símbolos não terminais (as categorias sintáticas), um símbolo inicial e um conjunto de produções que indicam como cada não terminal pode ser formado \cite{aho2008compiladores}. A notação mais difundida para escrever essas gramáticas é a forma de Backus-Naur (BNF), empregada pela primeira vez na definição da linguagem ALGOL 60 \cite{backus1960algol}. A BNF foi depois estendida com construções para opcionalidade, repetição e agrupamento, dando origem à EBNF, padronizada pela norma ISO/IEC 14977 \cite{iso14977}.
 
@@ -52,7 +60,7 @@ Uma gramática pode servir a dois propósitos distintos. O primeiro é documenta
 
 O CodeMage emprega a gramática apenas no primeiro sentido. Como o subconjunto adotado é sintaticamente compatível com Lua, o próprio compilador do LuaJIT já reconhece todos os programas válidos, e gerar um analisador sintático próprio duplicaria um trabalho que o interpretador embarcado realiza. A restrição que interessa ao jogo não está na sintaxe, mas no ambiente em que o código é executado, conforme discutido na seção seguinte. A gramática apresentada na \autoref{sec_gramatica} funciona, portanto, como especificação da linguagem de ensino. Um analisador gerado com ANTLR voltaria a fazer sentido caso o jogo passasse a exigir validações sintáticas próprias, como mensagens de erro reescritas em linguagem didática.
 
-## Execução isolada de código {#sec_sandbox_teoria}
+### Execução isolada de código {#sec_sandbox_teoria}
 
 Executar código não confiável dentro de um processo exige isolá-lo, de modo que um erro ou uma ação maliciosa do código hospedado não comprometa o restante do sistema. \citeonline{wahbe1993sfi} formalizaram essa ideia como isolamento de falhas por software: o código não confiável é confinado a um domínio próprio, do qual não consegue escrever nem saltar para fora. O termo *sandbox* designa, de forma genérica, qualquer ambiente que imponha esse confinamento.
 

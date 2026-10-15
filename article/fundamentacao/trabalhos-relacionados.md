@@ -1,6 +1,10 @@
-Neste capítulo, são apresentados trabalhos, jogos e ferramentas nos quais a escrita de código pelo usuário constitui o mecanismo central de interação. O objetivo é posicionar o CodeMage em relação ao estado da arte e evidenciar a lacuna que ele busca preencher: um jogo cuja mecânica é a construção de algoritmos, voltado explicitamente ao exercício da lógica de programação. Os trabalhos foram organizados em três grupos: jogos que ensinam programação por meio de código, jogos de automação por programação e ferramentas criativas baseadas em código. Em seguida, são discutidas as mecânicas que esses jogos têm em comum.
+Neste capítulo, são apresentados trabalhos, jogos e ferramentas nos quais a escrita de código pelo usuário constitui o mecanismo central de interação. O objetivo é posicionar o CodeMage em relação ao estado da arte e evidenciar a lacuna que ele busca preencher: um jogo cuja mecânica é a construção de algoritmos, voltado explicitamente ao exercício da lógica de programação. Primeiro são descritos os jogos e ferramentas correlatos, em seguida as mecânicas que eles têm em comum e, por fim, a síntese que posiciona o CodeMage em relação a eles.
 
-## Jogos que ensinam programação por meio de código
+## Jogos e ferramentas correlatos
+
+Os trabalhos analisados foram organizados em três grupos: jogos que ensinam programação por meio de código, jogos de automação por programação e ferramentas criativas baseadas em código.
+
+### Jogos que ensinam programação por meio de código
 
 O CodeCombat \cite{codecombat} é uma plataforma na qual o jogador controla um personagem em um RPG de fantasia escrevendo código em Python ou JavaScript para movê-lo, coletar itens e derrotar inimigos. É amplamente adotado em contexto escolar, com uma edição voltada a professores. Aproxima-se do CodeMage por unir narrativa de RPG e escrita de código, mas dele se distingue por utilizar linguagens de propósito geral diretamente e por estruturar a progressão em fases lineares, e não em torno de adversários que forçam a generalização da solução.
 
@@ -10,11 +14,11 @@ Os jogos da Tomorrow Corporation e da Zachtronics representam a vertente dos *pu
 
 O Screeps \cite{screeps} é um jogo de estratégia online massivo (MMO) no qual o jogador programa, em JavaScript, o comportamento autônomo de suas unidades, que continuam operando mesmo com o jogador desconectado. Diferencia-se por seu caráter persistente e competitivo entre jogadores reais. O foco recai sobre a arquitetura de sistemas autônomos, e não sobre o aprendizado guiado de lógica por um iniciante.
 
-## Jogos de automação por programação
+### Jogos de automação por programação
 
 O The Farmer Was Replaced \cite{farmerwasreplaced} é um jogo de automação no qual o jogador programa um drone, em uma linguagem semelhante a Python, para executar tarefas agrícolas repetitivas de forma cada vez mais eficiente. À medida que automatiza a fazenda, o jogador progride por uma árvore tecnológica, e seu código é armazenado em arquivos editáveis externamente. É, entre os jogos comerciais, o correlato mais próximo da proposta do CodeMage no que tange a fazer da escrita de código a fonte de progressão. A principal diferença está no domínio (automação contínua de uma fazenda *versus* combate por turnos) e no fato de o CodeMage adotar mecanismos, as imunidades dos adversários, desenhados especificamente para induzir a reescrita e a generalização do raciocínio.
 
-## Ferramentas criativas baseadas em código
+### Ferramentas criativas baseadas em código
 
 Fora do domínio dos jogos, o *live coding* musical ilustra como a escrita de código pode ser uma atividade expressiva e de retorno imediato. O Sonic Pi \cite{sonicpi}, criado por Sam Aaron e baseado na linguagem Ruby, permite criar e executar música ao vivo por meio de código, sendo amplamente empregado em contextos educacionais por sua baixa barreira de entrada. O TidalCycles \cite{tidalcycles}, escrito em Haskell, oferece uma linguagem de padrões para a composição algorítmica de ritmos e melodias. Embora não tenham finalidade lúdica nem objetivo direto de ensinar lógica de programação, essas ferramentas reforçam um princípio caro a este trabalho: o de que escrever código pode ser, em si, uma experiência envolvente e de causa e efeito imediatos.
 
