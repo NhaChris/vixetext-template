@@ -2,7 +2,7 @@ Este capítulo descreve o protótipo funcional do CodeMage, construído nesta pr
 
 ## Visão geral do protótipo
 
-O protótipo é um jogo *desktop* desenvolvido sobre o framework LÖVE, versão 11.5, que embarca o interpretador LuaJIT, compatível com a especificação Lua 5.1 \cite{love2d}. O jogo é distribuído como executável independente para Windows ou como pacote `.love` multiplataforma, sem exigir que o usuário instale a linguagem ou o framework. Os recursos visuais são gerados proceduralmente em tempo de execução. Imagens externas, quando presentes, apenas se sobrepõem à geração procedural, de modo que nenhum arquivo de arte é obrigatório para o jogo funcionar.
+O protótipo é um jogo *desktop* desenvolvido sobre o framework LÖVE, versão 11.5, que embarca o interpretador LuaJIT, compatível com a especificação Lua 5.1. O jogo é distribuído como executável independente para Windows ou como pacote `.love` multiplataforma, sem exigir que o usuário instale a linguagem ou o framework. Os recursos visuais são gerados proceduralmente em tempo de execução. Imagens externas, quando presentes, apenas se sobrepõem à geração procedural, de modo que nenhum arquivo de arte é obrigatório para o jogo funcionar.
 
 Três telas compõem o fluxo de uso. No menu inicial, apresentado na \autoref{fig_menu}, o jogador cria um novo jogo ou carrega o progresso salvo.
 

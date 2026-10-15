@@ -26,6 +26,10 @@ As etapas de conclusão e comunicação correspondem, respectivamente, à análi
 
 ### Ferramentas e tecnologias
 
-O artefato é desenvolvido na linguagem **Lua**, executada sobre o framework **LÖVE** (versão 11.5), que embarca o interpretador **LuaJIT** (compatível com a especificação Lua 5.1). As características da linguagem e os motivos da escolha do framework são discutidos na fundamentação teórica (\autoref{sec_lua} e \autoref{sec_love}).
+O artefato é desenvolvido na linguagem **Lua**, executada sobre o framework **LÖVE**[^site_love] (versão 11.5), que embarca o interpretador **LuaJIT**[^site_luajit] (compatível com a especificação Lua 5.1). As características da linguagem e os motivos da escolha do framework são discutidos na fundamentação teórica (\autoref{sec_lua} e \autoref{sec_love}).
 
 A plataforma-alvo é o ambiente *desktop*, com empacotamento do jogo como executável independente. A resolução, o título e os demais parâmetros de inicialização são centralizados em um único módulo de configuração, e os recursos visuais (*sprites*) são gerados proceduralmente, dispensando dependências de arquivos externos obrigatórios.
+
+[^site_love]: Disponível em: <https://love2d.org/>. Acesso em: 16 jun. 2026.
+
+[^site_luajit]: Disponível em: <https://luajit.org/luajit.html>. Acesso em: 25 set. 2026.
