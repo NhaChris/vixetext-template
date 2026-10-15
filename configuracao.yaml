@@ -43,16 +43,28 @@ siglas:
     d: Application Programming Interface
   - s: BNF
     d: Backus-Naur Form
+  - s: CPU
+    d: Central Processing Unit
+  - s: DSL
+    d: Domain-Specific Language
   - s: EBNF
     d: Extended Backus-Naur Form
+  - s: IEC
+    d: International Electrotechnical Commission
+  - s: ISO
+    d: International Organization for Standardization
   - s: JIT
     d: Just-In-Time (compilation)
   - s: MMO
     d: Massively Multiplayer Online
-  - s: RPG
-    d: Role-Playing Game
+  - s: PUC-Rio
+    d: Pontifícia Universidade Católica do Rio de Janeiro
   - s: RNG
     d: Random Number Generator
+  - s: RPG
+    d: Role-Playing Game
+  - s: TCC
+    d: Trabalho de Conclusão de Curso
   - s: VM
     d: Virtual Machine (máquina virtual)
 simbolos:

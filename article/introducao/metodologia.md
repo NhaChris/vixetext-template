@@ -14,7 +14,7 @@ b. Modelagem da arquitetura (sugestão): definição de uma arquitetura modular 
 
 c. Implementação do núcleo seguro (desenvolvimento): construção do ambiente isolado (*sandbox*) responsável por compilar e executar o código do jogador, com as defesas necessárias contra laços infinitos, exaustão de memória e acesso indevido a recursos;
 
-d. Definição da linguagem de magias (desenvolvimento): especificação do subconjunto da linguagem Lua e da interface de programação de domínio (API) exposta ao jogador, formalizada por uma gramática em notação BNF/EBNF, apresentada na \autoref{sec_gramatica};
+d. Definição da linguagem de magias (desenvolvimento): especificação do subconjunto da linguagem Lua e da interface de programação de domínio (API) exposta ao jogador, formalizada por uma gramática escrita na forma de Backus-Naur (*Backus-Naur Form*, BNF), em sua versão estendida (*Extended Backus-Naur Form*, EBNF), apresentada na \autoref{sec_gramatica};
 
 e. Implementação das mecânicas de jogo (desenvolvimento): desenvolvimento do modelo de combate, da progressão por círculos de magia e do sistema de imunidades dos adversários, que conferem propósito pedagógico ao avanço;
 
