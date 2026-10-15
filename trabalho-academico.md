@@ -15,9 +15,9 @@
 
 @import('article/fundamentacao/trabalhos-relacionados.md')
 
-<!-- Capítulo 4: O protótipo -->
-# O protótipo CodeMage
-\label{cap_prototipo}
+<!-- Capítulo 4: A plataforma -->
+# A plataforma CodeMage
+\label{cap_plataforma}
 
 @import('article/desenvolvimento/main.md')
 

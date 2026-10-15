@@ -1,8 +1,8 @@
-Este capítulo descreve o protótipo funcional do CodeMage, construído nesta primeira etapa do trabalho para demonstrar a viabilidade da proposta. A exposição parte da visão geral do artefato e do seu fluxo de uso e passa pela arquitetura de módulos e pelas duas decisões técnicas centrais, que são o modelo de execução em duas fases e o ambiente isolado que executa o código do jogador. Em seguida, apresenta a linguagem de magias, com sua API de domínio e a gramática formal do subconjunto aceito, e termina nas mecânicas que dão propósito pedagógico à progressão e nos mecanismos de validação do artefato.
+Este capítulo descreve a primeira versão da plataforma CodeMage, construída nesta etapa do trabalho. A exposição parte da visão geral do artefato e do seu fluxo de uso e passa pela arquitetura de módulos e pelas duas decisões técnicas centrais, que são o modelo de execução em duas fases e o ambiente isolado que executa o código do jogador. Em seguida, apresenta a linguagem de magias, com sua API de domínio e a gramática formal do subconjunto aceito, e termina nas mecânicas que dão propósito pedagógico à progressão e nos mecanismos de validação do artefato.
 
-## Visão geral do protótipo
+## Visão geral da plataforma
 
-O protótipo é um jogo *desktop* desenvolvido sobre o framework LÖVE, versão 11.5, que embarca o interpretador LuaJIT, compatível com a especificação Lua 5.1. O jogo é distribuído como executável independente para Windows ou como pacote `.love` multiplataforma, sem exigir que o usuário instale a linguagem ou o framework. Os recursos visuais são gerados proceduralmente em tempo de execução. Imagens externas, quando presentes, apenas se sobrepõem à geração procedural, de modo que nenhum arquivo de arte é obrigatório para o jogo funcionar.
+A plataforma é um jogo *desktop* desenvolvido sobre o framework LÖVE, versão 11.5, que embarca o interpretador LuaJIT, compatível com a especificação Lua 5.1. O jogo é distribuído como executável independente para Windows ou como pacote `.love` multiplataforma, sem exigir que o usuário instale a linguagem ou o framework. Os recursos visuais são gerados proceduralmente em tempo de execução. Imagens externas, quando presentes, apenas se sobrepõem à geração procedural, de modo que nenhum arquivo de arte é obrigatório para o jogo funcionar.
 
 Três telas compõem o fluxo de uso. No menu inicial, apresentado na \autoref{fig_menu}, o jogador cria um novo jogo ou carrega o progresso salvo.
 
@@ -28,7 +28,7 @@ O ciclo completo (escrever a magia, validá-la, equipá-la, combater e voltar ao
 
 O critério que orientou a organização do código foi a separação entre regras e apresentação: o módulo que decide quanto dano um golpe causa não sabe desenhar na tela, e os módulos que desenham não decidem regra alguma. Cada arquivo do projeto tem uma responsabilidade única, como resume o \autoref{quadro_modulos}.
 
-Quadro quadro_modulos: Módulos do protótipo e suas responsabilidades
+Quadro quadro_modulos: Módulos da plataforma e suas responsabilidades
 
 | Módulo | Papel | Responsabilidade |
 |---|---|---|
@@ -52,7 +52,7 @@ Um detalhe dessa organização merece nota: os dados vivem em módulos próprios
 
 ## Execução em duas fases: do plano à *timeline*
 
-A decisão arquitetural mais importante do protótipo nasce de um problema concreto. O código de uma magia pode produzir vários efeitos (dano, cura, aplicação de status) e pode falhar no meio da execução por um erro qualquer. Se cada chamada à API alterasse o estado do combate imediatamente, uma magia que quebrasse na terceira linha deixaria o jogo inconsistente, com metade do feitiço aplicada e a outra metade não.
+A decisão arquitetural mais importante da plataforma nasce de um problema concreto. O código de uma magia pode produzir vários efeitos (dano, cura, aplicação de status) e pode falhar no meio da execução por um erro qualquer. Se cada chamada à API alterasse o estado do combate imediatamente, uma magia que quebrasse na terceira linha deixaria o jogo inconsistente, com metade do feitiço aplicada e a outra metade não.
 
 A solução divide a execução em duas fases, representadas na \autoref{fig_duas_fases}. Na primeira, o *cast*, o código do jogador roda dentro da sandbox e nenhuma função da API altera a vida de quem quer que seja. Cada chamada calcula o efeito final, já considerando imunidades, fraquezas e carga acumulada, e enfileira a ação correspondente em um plano. O valor calculado é devolvido ao código do jogador, que pode usá-lo para ramificar, por exemplo, tentando outro tipo de dano quando o primeiro retorna zero. Na segunda fase, encerrado o *cast* sem erros, o combate monta a *timeline* completa do turno, com as ações do jogador, os efeitos periódicos de status e o contra-ataque do chefão, e a camada de apresentação a reproduz ao longo do tempo, aplicando cada ação no instante agendado e disparando os efeitos visuais correspondentes.
 
@@ -354,7 +354,7 @@ magia.dano(magia.alvo(), "sagrado")
 
 Algumas regras da linguagem não podem ser expressas em uma gramática livre de contexto, porque dependem de contagem ou do comportamento do programa durante a execução. A primeira é a restrição métrica dos círculos de magia. O número de linhas lógicas e o número de chamadas `magia.*` de cada feitiço não podem exceder os limites do círculo do jogador, apresentados na \autoref{sec_circulos}. A medição ignora comentários e o conteúdo de strings e não conta quebras de linha dentro de parênteses como linhas novas. Formalmente, trata-se de atributos contáveis sobrepostos à gramática apresentada.
 
-A segunda restrição é operacional e limita a quantidade de ações que um único feitiço pode enfileirar no plano. Os limites de círculo contam linhas e chamadas, mas não o número de voltas de um laço: `for i = 1, 10000 do magia.dano(...) end` ocupa uma linha e uma chamada e cabe no primeiro círculo. Como cada ação é reproduzida na *timeline* em cerca de 0,7 segundo, esse feitiço travaria o combate por horas. O protótipo aceita no máximo 60 ações por feitiço. O excedente é descartado e o registro de combate avisa o jogador, o que serve também de retorno pedagógico sobre o custo de um laço desmedido. É uma restrição que nenhuma gramática captura, da mesma classe do problema da parada que motiva o limite de instruções da sandbox.
+A segunda restrição é operacional e limita a quantidade de ações que um único feitiço pode enfileirar no plano. Os limites de círculo contam linhas e chamadas, mas não o número de voltas de um laço: `for i = 1, 10000 do magia.dano(...) end` ocupa uma linha e uma chamada e cabe no primeiro círculo. Como cada ação é reproduzida na *timeline* em cerca de 0,7 segundo, esse feitiço travaria o combate por horas. A plataforma aceita no máximo 60 ações por feitiço. O excedente é descartado e o registro de combate avisa o jogador, o que serve também de retorno pedagógico sobre o custo de um laço desmedido. É uma restrição que nenhuma gramática captura, da mesma classe do problema da parada que motiva o limite de instruções da sandbox.
 
 A terceira restrição envolve a função `magia.carregar`. Cada chamada acumula um nível de carga, que multiplica o próximo golpe (por dois, três ou quatro) e o torna garantido contra esquivas. Sem um teto, o laço `for i = 1, 10000 do magia.carregar() end` multiplicaria o dano por mais de dez mil dentro dos limites do primeiro círculo. O teto é de três níveis, mas, em vez de simplesmente proibir o excesso, o jogo o transforma em mecânica. Passar do teto causa um *overflow*: a carga acumulada se perde e a energia explode no próprio jogador, com dano equivalente a um quarto da sua vida máxima. A escolha é deliberadamente temática, pois o castigo por estourar um acumulador é o mesmo que as linguagens reais aplicam, e o jogador que tenta explorar o sistema encontra uma consequência dentro da ficção, e não uma mensagem de erro.
 
@@ -384,7 +384,7 @@ O ponto central do desenho está no cálculo da potência. O círculo de uma mag
 
 Se os círculos regulam o quanto se pode escrever, as imunidades dos chefões determinam o que vale a pena escrever. Cada chefão intercepta uma classe de estratégia, e as imunidades são acumulativas, pois a estratégia bloqueada por um chefão continua sendo um mau caminho diante dos seguintes. O \autoref{quadro_chefoes} resume a progressão.
 
-Quadro quadro_chefoes: Chefões do protótipo e a estratégia que cada um bloqueia
+Quadro quadro_chefoes: Chefões da versão atual e a estratégia que cada um bloqueia
 
 | Chefão | Mecânica | O que força o jogador a fazer |
 |---|---|---|
@@ -402,7 +402,7 @@ O quadro deixa visível a filiação à Aprendizagem Baseada em Problemas: o che
 
 ### Tutoriais: a ferramenta sem a solução
 
-Um jogo que exige escrever código precisa, em algum momento, ensinar a linguagem. A referência da API, disponível no grimório, documenta as funções da tabela `magia`, mas não as construções de Lua: quem não sabe escrever um laço não tem como descobrir que precisa de um. Para isso o protótipo inclui um balão de tutorial, exibido na primeira vez em que o jogador enfrenta cada chefão e que pode ser reaberto depois pelo botão "? Dica", tanto no combate quanto no grimório. Cada balão apresenta uma construção da linguagem, com explicação e exemplos, na sequência resumida no \autoref{quadro_tutoriais}.
+Um jogo que exige escrever código precisa, em algum momento, ensinar a linguagem. A referência da API, disponível no grimório, documenta as funções da tabela `magia`, mas não as construções de Lua: quem não sabe escrever um laço não tem como descobrir que precisa de um. Para isso a plataforma inclui um balão de tutorial, exibido na primeira vez em que o jogador enfrenta cada chefão e que pode ser reaberto depois pelo botão "? Dica", tanto no combate quanto no grimório. Cada balão apresenta uma construção da linguagem, com explicação e exemplos, na sequência resumida no \autoref{quadro_tutoriais}.
 
 Quadro quadro_tutoriais: Sequência de lições dos tutoriais de linguagem
 

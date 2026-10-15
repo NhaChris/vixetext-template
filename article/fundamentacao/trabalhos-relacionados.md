@@ -28,7 +28,7 @@ A análise dos trabalhos acima revela um conjunto de mecânicas recorrentes, que
 
 A primeira é o **editor embutido com retorno imediato**. CodeCombat, CodeSpells, Human Resource Machine e TIS-100 oferecem o ambiente de programação dentro do próprio jogo, e o efeito do código é observado logo após sua execução, sem que o jogador precise sair da ficção para compilar ou depurar. O CodeMage segue o mesmo caminho com o grimório[^grimorio], e o registro de combate cumpre o papel de mensagem de depuração.
 
-[^grimorio]: No CodeMage, grimório é o nome da tela em que o jogador escreve, testa e guarda suas magias. Ela reúne o editor de código, a lista de magias salvas, um medidor de linhas e chamadas e a referência da API, e é descrita no \autoref{cap_prototipo}.
+[^grimorio]: No CodeMage, grimório é o nome da tela em que o jogador escreve, testa e guarda suas magias. Ela reúne o editor de código, a lista de magias salvas, um medidor de linhas e chamadas e a referência da API, e é descrita no \autoref{cap_plataforma}.
 
 A segunda é a **restrição de recursos**. No Screeps, a execução do código de cada jogador é limitada por um orçamento de tempo de processador (*Central Processing Unit*, CPU) por ciclo do jogo, e o excedente não utilizado é acumulado em uma reserva que pode ser gasta depois[^site_screeps_cpu]. No TIS-100, a computação é distribuída entre doze nós de capacidade reduzida. Em ambos os casos, a restrição transforma a eficiência do código em parte do desafio. No CodeMage, a restrição equivalente são os limites de linhas e de chamadas impostos por cada círculo de magia.
 

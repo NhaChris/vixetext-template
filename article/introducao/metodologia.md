@@ -6,7 +6,7 @@ Quanto aos objetivos, caracteriza-se como exploratória e descritiva, na medida 
 
 A metodologia base adotada é a da pesquisa de *Design Science* (ou *Design Science Research*), que orienta a construção e a avaliação de artefatos tecnológicos como meio de gerar conhecimento \cite{dresch2015design}. Sob essa ótica, o CodeMage é simultaneamente o objeto construído e o instrumento por meio do qual se examinam as questões de pesquisa. \citeonline{lacerda2013design} descrevem o método em cinco etapas principais: conscientização, sugestão, desenvolvimento, avaliação e conclusão, às quais se acrescenta a comunicação dos resultados.
 
-As atividades deste trabalho foram organizadas de acordo com essas etapas. As atividades de (a) a (f) foram realizadas nesta primeira fase do TCC e resultaram no protótipo descrito no \autoref{cap_prototipo}. A atividade (g) será conduzida na segunda fase.
+As atividades deste trabalho foram organizadas de acordo com essas etapas. As atividades de (a) a (f) foram realizadas nesta primeira fase do TCC e resultaram no protótipo descrito no \autoref{cap_plataforma}. A atividade (g) será conduzida na segunda fase.
 
 a. Levantamento e fundamentação (conscientização): revisão da literatura sobre dificuldades no ensino de lógica de programação e pensamento computacional, gamificação e aprendizagem baseada em problemas, bem como o estudo de jogos correlatos que empregam código como mecânica;
 

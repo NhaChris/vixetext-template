@@ -66,7 +66,7 @@ Executar código não confiável dentro de um processo exige isolá-lo, de modo 
 
 Em linguagens de *scripting* embutidas, o isolamento costuma combinar três medidas. A primeira é restringir o ambiente, expondo ao código apenas as funções necessárias e omitindo as que dão acesso ao sistema de arquivos, ao sistema operacional ou ao carregamento de outros códigos. A segunda é limitar o tempo de execução, interrompendo programas que não terminam. A terceira é limitar o consumo de memória. As duas últimas precisam ser verificadas durante a execução, e não por inspeção prévia do código. Decidir, para um programa qualquer, se ele termina é o problema da parada, que \citeonline{turing1937computable} demonstrou ser indecidível. Por isso nenhuma análise estática consegue garantir que a magia de um jogador não contém um laço infinito, e o limite precisa ser imposto enquanto o código roda, contando as instruções executadas.
 
-Em Lua, a primeira medida é implementada pelos ambientes e a segunda e a terceira pelo *hook* de instruções, ambos descritos na \autoref{sec_lua}. O \autoref{cap_prototipo} mostra como esses recursos foram combinados no protótipo e quais cuidados adicionais foram necessários sob o LuaJIT.
+Em Lua, a primeira medida é implementada pelos ambientes e a segunda e a terceira pelo *hook* de instruções, ambos descritos na \autoref{sec_lua}. O \autoref{cap_plataforma} mostra como esses recursos foram combinados na plataforma e quais cuidados adicionais foram necessários sob o LuaJIT.
 
 [^site_defold]: Disponível em: <https://defold.com/>. Acesso em: 25 set. 2026.
 
