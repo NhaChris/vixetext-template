@@ -94,7 +94,7 @@ O \autoref{quadro_api} apresenta o contrato de cada função: o que ela devolve 
 Quadro quadro_api: Contrato das funções da API de domínio
 
 | Chamada | Retorno | Efeito enfileirado |
-|---|---|---|
+|-------|-----|------|
 | `magia.alvo()` | vista do chefão | nenhum (leitura) |
 | `magia.eu()` | vista do jogador | nenhum (leitura) |
 | `magia.dano(alvo, tipo)` | dano efetivo | dano e eventual status no chefão |
@@ -204,7 +204,7 @@ Fonte: Elaborado pelo autor.
 <while>        ::= "while" <expr> "do" <bloco> "end"
 ```
 
-A forma idiomática do `<for-in>` ensinada pelo jogo é a iteração sobre a lista de status devolvida pela API, como em `for _, s in ipairs(magia.status(magia.alvo())) do ... end`. Os laços são permitidos sem restrição sintática, e a proteção contra laços infinitos é dinâmica, feita pelo *hook* de instruções. As construções `repeat ... until`, `do ... end` e `break` foram deixadas fora da linguagem pretendida. Elas continuam válidas, porque o compilador as aceita, mas nenhum dos problemas propostos pelos chefões depende delas e nenhum tutorial as utiliza, o que mantém pequeno o vocabulário que o iniciante precisa conhecer.
+A forma idiomática do `<for-in>` ensinada pelo jogo é a iteração sobre a lista de status devolvida pela API, como no segundo exemplo da subseção anterior. Os laços são permitidos sem restrição sintática, e a proteção contra laços infinitos é dinâmica, feita pelo *hook* de instruções. As construções `repeat ... until`, `do ... end` e `break` foram deixadas fora da linguagem pretendida. Elas continuam válidas, porque o compilador as aceita, mas nenhum dos problemas propostos pelos chefões depende delas e nenhum tutorial as utiliza, o que mantém pequeno o vocabulário que o iniciante precisa conhecer.
 
 **Chamadas e expressões.** Toda ação do feitiço é uma chamada de função, e toda chamada é também uma expressão, cujo valor pode ser guardado ou comparado.
 
@@ -236,7 +236,8 @@ A forma idiomática do `<for-in>` ensinada pelo jogo é a iteração sobre a lis
                  | "and" | "or"
 <op-un>        ::= "-" | "not" | "#"
 
-<tabela>       ::= "{" [ <campo> { ("," | ";") <campo> } [ "," | ";" ] ] "}"
+<tabela>       ::= "{" [ <campo> { ("," | ";") <campo> }
+                       [ "," | ";" ] ] "}"
 <campo>        ::= "[" <expr> "]" "=" <expr>
                  | <Nome> "=" <expr>
                  | <expr>
@@ -286,8 +287,10 @@ Fonte: Adaptado de \citeonline{lua51manual}.
 
 <alvo-expr>     ::= "magia" "." "alvo"     "(" ")"
 <eu-expr>       ::= "magia" "." "eu"       "(" ")"
-<dano>          ::= "magia" "." "dano"     "(" <expr-entidade> "," <tipo-dano> ")"
-<curar>         ::= "magia" "." "curar"    "(" <expr-entidade> "," <expr> ")"
+<dano>          ::= "magia" "." "dano"     "(" <expr-entidade> ","
+                                               <tipo-dano> ")"
+<curar>         ::= "magia" "." "curar"    "(" <expr-entidade> ","
+                                               <expr> ")"
 <absorver>      ::= "magia" "." "absorver" "(" <tipo-dano> ")"
 <carregar>      ::= "magia" "." "carregar" "(" ")"
 <dissipar>      ::= "magia" "." "dissipar" "(" <expr-entidade> ")"
