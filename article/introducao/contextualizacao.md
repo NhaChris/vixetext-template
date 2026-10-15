@@ -12,9 +12,9 @@ Desta forma, propõe-se o CodeMage, um jogo eletrônico de combate por turnos no
 
 ## Problema de pesquisa
 
-Considerando o exposto, este trabalho busca responder à seguinte questão: de que forma um jogo no qual a construção de algoritmos é a mecânica central, e não uma recompensa externa, pode apoiar o ensino de lógica de programação? 
+Considerando o exposto, este trabalho busca responder à seguinte questão: como desenvolver uma plataforma gamificada em que a construção de algoritmos seja a mecânica central do jogo, e não uma recompensa externa, executando com segurança o código escrito pelo jogador?
 
-A investigação proposta envolve tanto o desenho de mecânicas de jogo que incentivem o raciocínio algorítmico e boas práticas de programação quanto os desafios técnicos de executar código de usuário de maneira segura, determinística e pedagogicamente proveitosa.
+O problema envolve tanto o desenho de mecânicas de jogo que incentivem o raciocínio algorítmico e boas práticas de programação quanto os desafios técnicos de executar o código do jogador de maneira segura e determinística. Avaliar os efeitos da plataforma sobre a aprendizagem dos estudantes não faz parte do escopo deste trabalho e é indicado como trabalho futuro.
 
 ## Justificativa
 

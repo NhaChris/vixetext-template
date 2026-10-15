@@ -2,11 +2,11 @@
 
 Este trabalho classifica-se, quanto à natureza, como aplicada, pois visa à produção de um artefato de software, denominado CodeMage, destinado à solução de um problema concreto: o apoio ao ensino de lógica de programação.
 
-Quanto aos objetivos, caracteriza-se como exploratória e descritiva, na medida em que investiga a viabilidade de uma abordagem (programação como mecânica de jogo) e descreve detalhadamente as decisões de projeto e implementação adotadas. Quanto à abordagem, é predominantemente qualitativa, centrada na análise das escolhas arquiteturais e de suas implicações pedagógicas e técnicas.
+Quanto aos objetivos, caracteriza-se como exploratória e descritiva, na medida em que explora a construção de uma plataforma em que a programação é a mecânica de jogo e descreve detalhadamente as decisões de projeto e implementação adotadas. Quanto à abordagem, é predominantemente qualitativa, centrada na análise das escolhas arquiteturais e de suas implicações pedagógicas e técnicas.
 
-A metodologia base adotada é a da pesquisa de *Design Science* (ou *Design Science Research*), que orienta a construção e a avaliação de artefatos tecnológicos como meio de gerar conhecimento \cite{dresch2015design}. Sob essa ótica, o CodeMage é simultaneamente o objeto construído e o instrumento por meio do qual se examinam as questões de pesquisa. \citeonline{lacerda2013design} descrevem o método em cinco etapas principais: conscientização, sugestão, desenvolvimento, avaliação e conclusão, às quais se acrescenta a comunicação dos resultados.
+A metodologia base adotada é a da pesquisa de *Design Science* (ou *Design Science Research*), que orienta a construção e a avaliação de artefatos tecnológicos como meio de gerar conhecimento \cite{dresch2015design}. Sob essa ótica, o CodeMage é simultaneamente o objeto construído e o instrumento por meio do qual se examina a questão de pesquisa. \citeonline{lacerda2013design} descrevem o método em cinco etapas principais: conscientização, sugestão, desenvolvimento, avaliação e conclusão, às quais se acrescenta a comunicação dos resultados.
 
-As atividades deste trabalho foram organizadas de acordo com essas etapas. As atividades de (a) a (f) foram realizadas nesta primeira fase do TCC e resultaram no protótipo descrito no \autoref{cap_plataforma}. A atividade (g) será conduzida na segunda fase.
+As atividades deste trabalho foram organizadas de acordo com essas etapas. As atividades de (a) a (f) foram realizadas na primeira fase do Trabalho de Conclusão de Curso (TCC) e resultaram na primeira versão da plataforma, descrita no \autoref{cap_plataforma}. As atividades (g) e (h) serão conduzidas na segunda fase, o TCC 2.
 
 a. Levantamento e fundamentação (conscientização): revisão da literatura sobre dificuldades no ensino de lógica de programação e pensamento computacional, gamificação e aprendizagem baseada em problemas, bem como o estudo de jogos correlatos que empregam código como mecânica;
 
@@ -20,7 +20,9 @@ e. Implementação das mecânicas de jogo (desenvolvimento): desenvolvimento do 
 
 f. Validação técnica (avaliação): verificação, por meio de uma suíte de testes automatizados, de que as regras de combate se comportam como projetado, de que apenas código executável é incorporado ao jogo e de que o estado é persistido de forma confiável;
 
-g. Avaliação com estudantes (avaliação, prevista para o TCC 2): aplicação do CodeMage junto a estudantes de disciplinas introdutórias de programação, observando engajamento, desempenho na resolução dos desafios e percepção dos participantes.
+g. Evolução da plataforma (desenvolvimento, TCC 2): ampliação do conteúdo pedagógico com novos chefões e lições, melhorias no ambiente de programação e registro do processo de aprendizagem do jogador, detalhados na \autoref{sec_proximas_etapas};
+
+h. Avaliação técnica (avaliação, TCC 2): ampliação da suíte de testes para cobrir as novas funcionalidades e verificação de que a plataforma atende aos objetivos específicos definidos neste trabalho.
 
 As etapas de conclusão e comunicação correspondem, respectivamente, à análise dos resultados de cada fase e à redação deste documento.
 

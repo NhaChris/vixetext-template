@@ -4,7 +4,7 @@ Neste tópico são apresentados os objetivos desta pesquisa, divididos em geral 
 
 ### Objetivo Geral
 
-O presente trabalho tem como objetivo geral desenvolver uma plataforma gamificada, denominada de CodeMage, na forma de um jogo de combate por turnos, na qual a construção de algoritmos constitui a mecânica central, com o propósito de apoiar o ensino de lógica de programação, utilizando a linguagem Lua como meio de expressão dessa lógica.
+O presente trabalho tem como objetivo geral desenvolver uma plataforma gamificada, denominada CodeMage, na forma de um jogo de combate por turnos, na qual a construção de algoritmos constitui a mecânica central, com o propósito de apoiar o ensino de lógica de programação, utilizando a linguagem Lua como meio de expressão dessa lógica.
 
 ### Objetivos Específicos
 
