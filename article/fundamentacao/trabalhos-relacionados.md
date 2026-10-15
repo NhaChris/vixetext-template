@@ -36,8 +36,6 @@ A quarta são as **métricas de otimização**. O Human Resource Machine propõe
 
 O \autoref{quadro_relacionados} sintetiza a comparação entre os trabalhos analisados e o CodeMage.
 
-\needspace{0.45\textheight}
-
 Quadro quadro_relacionados: Comparação entre o CodeMage e os trabalhos relacionados
 
 | Trabalho | Linguagem | Domínio | Foco principal |

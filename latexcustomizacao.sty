@@ -42,3 +42,22 @@
     \vspace*{1cm}
   \end{capa}
 }
+
+% O template gera \includegraphics[width=...,height=\textheight] para as
+% figuras do Markdown; sem keepaspectratio, toda imagem seria esticada até a
+% altura da página. Com ele, largura e altura viram limites e a proporção é mantida.
+\setkeys{Gin}{keepaspectratio}
+
+% Quadros (longtable) que atravessam uma quebra de página repetem a legenda e
+% apareceriam duas vezes na lista de quadros. As entradas repetidas têm a mesma
+% âncora do hyperref (4º argumento), então só a primeira é impressa.
+\AtBeginDocument{%
+  \let\cm@contentsline\contentsline
+  \renewcommand{\contentsline}[4]{%
+    \if\relax\detokenize{#4}\relax
+      \cm@contentsline{#1}{#2}{#3}{#4}%
+    \else\ifcsname cm@visto@#4\endcsname\else
+      \expandafter\gdef\csname cm@visto@#4\endcsname{}%
+      \cm@contentsline{#1}{#2}{#3}{#4}%
+    \fi\fi}%
+}

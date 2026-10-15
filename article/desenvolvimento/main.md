@@ -4,13 +4,25 @@ Este capítulo descreve o protótipo funcional do CodeMage, construído nesta pr
 
 O protótipo é um jogo *desktop* desenvolvido sobre o framework LÖVE, versão 11.5, que embarca o interpretador LuaJIT, compatível com a especificação Lua 5.1 \cite{love2d}. O jogo é distribuído como executável independente para Windows ou como pacote `.love` multiplataforma, sem exigir que o usuário instale a linguagem ou o framework. Os recursos visuais são gerados proceduralmente em tempo de execução. Imagens externas, quando presentes, apenas se sobrepõem à geração procedural, de modo que nenhum arquivo de arte é obrigatório para o jogo funcionar.
 
-Três telas compõem o fluxo de uso. No menu inicial, o jogador cria um novo jogo ou carrega o progresso salvo. O grimório é o ambiente de estudo: concentra o editor de código, a lista de magias salvas, um medidor de linhas e chamadas atualizado em tempo real e a referência da API. O combate, por fim, é onde a magia é posta à prova contra um chefão. O ciclo completo (escrever a magia, validá-la, equipá-la, combater e voltar ao editor para reescrevê-la) materializa o *loop* pedagógico discutido na fundamentação: a derrota diante de uma imunidade devolve o jogador ao código, e é a compreensão do porquê da falha que o faz avançar.
+Três telas compõem o fluxo de uso. No menu inicial, apresentado na \autoref{fig_menu}, o jogador cria um novo jogo ou carrega o progresso salvo.
 
-<!-- TODO(autor): inserir aqui os prints do grimório e do combate quando os arquivos existirem, por exemplo:
-![Tela do grimório](imagens/grimorio.png){#fig_grimorio largura=90%}
+![Menu inicial do CodeMage](imagens/Menu.png){#fig_menu largura=70%}
 
-Fonte: Captura de tela do protótipo CodeMage.
--->
+Fonte: Elaborada pelo autor.
+
+O grimório (\autoref{fig_grimorio}) é o ambiente de estudo. Concentra o editor de código, a lista de magias salvas, um medidor de linhas e chamadas atualizado em tempo real e a referência da API. Na figura, o medidor indica que a magia no editor ocupa as 2 linhas e as 3 chamadas permitidas no círculo 1.
+
+![Tela do grimório com uma magia de duas linhas no editor](imagens/Grimorio.png){#fig_grimorio largura=90%}
+
+Fonte: Elaborada pelo autor.
+
+O combate (\autoref{fig_combate}), por fim, é onde a magia é posta à prova contra um chefão. A tela reúne as barras de vida do jogador e do adversário, o registro de combate, que narra o efeito de cada ação, e as magias equipadas. Um seletor de arenas permite voltar a enfrentar os chefões já desbloqueados.
+
+![Tela de combate contra o Golem de Pedra](imagens/Combate.png){#fig_combate largura=90%}
+
+Fonte: Elaborada pelo autor.
+
+O ciclo completo (escrever a magia, validá-la, equipá-la, combater e voltar ao editor para reescrevê-la) materializa o *loop* pedagógico discutido na fundamentação: a derrota diante de uma imunidade devolve o jogador ao código, e é a compreensão do porquê da falha que o faz avançar.
 
 ## Arquitetura de módulos
 
@@ -46,7 +58,7 @@ A solução divide a execução em duas fases, representadas na \autoref{fig_dua
 
 ![Execução de um feitiço em duas fases](imagens/execucao-duas-fases.pdf){#fig_duas_fases largura=100%}
 
-Fonte: Elaborado pelo autor.
+Fonte: Elaborada pelo autor.
 
 Três propriedades decorrem desse desenho. A primeira é a atomicidade: se o código do jogador quebra, o plano é descartado e nada chegou a ser aplicado. A segunda é a reprodutibilidade. As decisões aleatórias do turno, como a chance de um golpe aplicar um status, usam um gerador de números pseudoaleatórios (RNG) semeado a cada *cast*, de modo que a *timeline* montada é determinística. A terceira diz respeito à correção das interações. Decisões que dependem do estado corrente do combate, como saber se o chefão ainda está vivo ou se o golpe foi esquivado, são tomadas no momento da aplicação, e não numa previsão feita durante o *cast*. É isso que permite interromper um *multicast* (um laço `for` que dispara vários golpes) no instante em que o chefão morre, sem aplicar os golpes restantes nem sofrer um contra-ataque de um adversário já derrotado.
 
@@ -408,11 +420,15 @@ Fonte: Elaborado pelo autor.
 
 A regra que define o conteúdo dos tutoriais é que eles ensinam apenas a linguagem. Nenhum texto cita o chefão enfrentado, suas imunidades ou suas fraquezas, e um teste automatizado falha se o nome de um chefão aparecer em algum tutorial. A separação distingue duas coisas que antes estavam misturadas: a ferramenta, isto é, como se escreve um laço, que é ensinada no momento exato em que passa a ser necessária; e o uso da ferramenta diante daquele inimigo, que continua sendo descoberto por experimentação e pela leitura do registro de combate. O andaime passa a ter duas camadas. Os círculos controlam quanta complexidade o jogador pode escrever, e os tutoriais entregam a sintaxe sem entregar a solução. Os exemplos de cada lição respeitam os limites do círculo em que o jogador estará ao vê-la, e todos são compilados na sandbox pela suíte de testes.
 
-<!-- TODO(autor): inserir aqui o print do balão de tutorial quando o arquivo existir, por exemplo:
-![Balão de tutorial](imagens/tutorial.png){#fig_tutorial largura=90%}
+A \autoref{fig_tutorial1} mostra o balão da primeira lição, exibido diante do Boneco de Treino, e a \autoref{fig_tutorial2}, o da segunda, que aparece no primeiro encontro com o Golem de Pedra. Nenhum dos dois menciona o adversário. O primeiro ensina a ler uma chamada de dentro para fora, e o segundo escreve o mesmo laço em três linhas e em uma só, para mostrar que o medidor do grimório conta as linhas que a linguagem ignora.
 
-Fonte: Captura de tela do protótipo CodeMage.
--->
+![Balão de tutorial da lição 1, a chamada de função](imagens/Tutorial1.png){#fig_tutorial1 largura=80%}
+
+Fonte: Elaborada pelo autor.
+
+![Balão de tutorial da lição 2, laços de repetição](imagens/Tutorial2.png){#fig_tutorial2 largura=80%}
+
+Fonte: Elaborada pelo autor.
 
 ## Validação, testes e persistência {#sec_validacao}
 
