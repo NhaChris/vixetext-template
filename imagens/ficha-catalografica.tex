@@ -1,0 +1,42 @@
+% Ficha catalográfica (rascunho para validação pela biblioteca).
+% Compilar dentro do container:  xelatex ficha-catalografica.tex
+% Ao mudar o número de páginas do trabalho, atualize "53 f." abaixo.
+% Os campos com linha em branco (Cutter, CDU, bibliotecário) são da biblioteca.
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=0pt]{geometry}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+\newcommand{\branco}[1]{\rule{#1}{0.4pt}}
+
+\begin{document}
+\vspace*{17cm}
+\begin{center}
+\fbox{%
+\begin{minipage}[t][7.5cm][t]{12.5cm}
+\vspace{0.4cm}
+\begin{tabular}{@{\hspace{0.3cm}}p{1.1cm}@{\hspace{0.2cm}}p{10.4cm}}
+ & Santos, Christyan Marcos Silva dos.\\[2pt]
+\branco{1cm} & \hspace{0.4cm}CodeMage: uma plataforma gamificada para o ensino de lógica
+  de programação utilizando a linguagem Lua / Christyan Marcos Silva dos Santos.
+  -- Aracaju, 2026.\\
+ & \hspace{0.4cm}53 f. : il. color.\\[8pt]
+ & \hspace{0.4cm}Projeto de Trabalho de Conclusão de Curso (Tecnologia em Análise
+  e Desenvolvimento de Sistemas) -- Instituto Federal de Educação, Ciência e
+  Tecnologia de Sergipe, Campus Aracaju, 2026.\\
+ & \hspace{0.4cm}Orientador: Prof. Francisco Rodrigues Santos.\\[8pt]
+ & \hspace{0.4cm}1. Lógica de programação. 2. Gamificação. 3. Ensino de
+  programação. 4. Lua (Linguagem de programação). I. Santos, Francisco
+  Rodrigues, orient. II. Título.\\
+\end{tabular}
+\vfill
+\hfill CDU \branco{2.6cm}\hspace{0.4cm}
+\vspace{0.4cm}
+\end{minipage}}
+
+\vspace{0.3cm}
+{\small Bibliotecário(a) responsável: \branco{5.5cm} \quad CRB: \branco{2.2cm}}
+\end{center}
+\end{document}
